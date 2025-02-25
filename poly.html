@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PolyTrack MD3 Redesign</title>
+  <!-- Roboto and Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+    /* MD3 Color Tokens and Typography */
+    :root {
+      --md-sys-color-primary: #6750A4;
+      --md-sys-color-on-primary: #FFFFFF;
+      --md-sys-color-secondary: #625B71;
+      --md-sys-color-on-secondary: #FFFFFF;
+      --md-sys-color-background: #FDFDFD;
+      --md-sys-color-surface: #FFFFFF;
+      --md-sys-color-error: #B3261E;
+      
+      --md-sys-typescale-headline-large-size: 32px;
+      --md-sys-typescale-headline-large-weight: 700;
+      --md-sys-typescale-body-large-size: 16px;
+      --md-sys-typescale-body-large-weight: 400;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--md-sys-color-background);
+      color: #202124;
+    }
+    
+    /* Fixed App Bar */
+    .app-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      height: 64px;
+      background-color: var(--md-sys-color-surface);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+    .app-bar .title {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 40vh;
+      background: linear-gradient(135deg, var(--md-sys-color-primary), #3700B3);
+      color: var(--md-sys-color-on-primary);
+      padding-top: 64px; /* offset fixed app bar */
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: var(--md-sys-typescale-headline-large-size);
+      font-weight: var(--md-sys-typescale-headline-large-weight);
+      margin: 0;
+    }
+    .hero p {
+      font-size: var(--md-sys-typescale-body-large-size);
+      font-weight: var(--md-sys-typescale-body-large-weight);
+      margin: 8px 0 16px;
+    }
+    
+    /* Button Style */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Main Content Layout */
+    main {
+      margin-top: 64px;
+    }
+    
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      padding: 16px;
+    }
+    .card {
+      background-color: var(--md-sys-color-surface);
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .card-content {
+      padding: 16px;
+    }
+    .card-content h2 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .card-content p {
+      margin: 0 0 16px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .card-content .btn {
+      background-color: var(--md-sys-color-secondary);
+      color: var(--md-sys-color-on-secondary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Fixed App Bar -->
+  <header class="app-bar">
+    <span class="material-icons">menu</span>
+    <div class="title">PolyTrack MD3</div>
+    <span class="material-icons">search</span>
+  </header>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>PolyTrack MD3</h1>
+      <p>Experience a sleek, modern take on track sharing.</p>
+      <button class="btn">Get Started</button>
+    </section>
+    
+    <!-- Card Grid -->
+    <section class="card-grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Track Image">
+        <div class="card-content">
+          <h2>Track 1</h2>
+          <p>Discover the exciting details of Track 1, with dynamic visuals and smooth gameplay.</p>
+          <button class="btn">Play</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Track Image">
+        <div class="card-content">
+          <h2>Track 2</h2>
+          <p>Experience the thrill of Track 2, designed for high speed and stunning aesthetics.</p>
+          <button class="btn">Play</button>
+        </div>
+      </div>
+      <!-- Additional track cards can be added here -->
+    </section>
+  </main>
+</body>
+</html>
